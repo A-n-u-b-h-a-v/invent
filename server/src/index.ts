@@ -4,7 +4,7 @@ import bodyParser from "body-parser"
 import cors from 'cors'
 import helmet from "helmet"
 import morgan from "morgan"
-import dashboardRoute from "./routes/dashboardRoute" 
+import dashboardRoute from "./routes/dashboardRoute"
 import productRoute from "./routes/productRoute"
 
 dotenv.config()

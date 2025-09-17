@@ -79,7 +79,7 @@ export const api = createApi({
         method: "POST",
         body: newProduct,
       }),
-      invalidatesTags: ["Prod+ucts"],
+      invalidatesTags: ["Products"],
     }),
     getUsers: build.query<User[], void>({
       query: () => "/users",

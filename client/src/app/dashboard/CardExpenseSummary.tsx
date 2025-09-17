@@ -13,8 +13,11 @@ type ExpenseSums = {
 const colors = ["#00C49F", "#0088FE", "#FFBB28"];
 
 const CardExpenseSummary = () => {
-  const { data: dashboardMetrics, isLoading } = useGetDashboardMetricsQuery();
-
+  const { data: dashboardMetrics, isLoading ,isError} = useGetDashboardMetricsQuery();
+  {
+    console.log(dashboardMetrics);
+    
+  }
   const expenseSummary = dashboardMetrics?.expenseSummary[0];
 
   const expenseByCategorySummary =
@@ -46,7 +49,7 @@ const CardExpenseSummary = () => {
 
   return (
     <div className="row-span-3 bg-white shadow-md rounded-2xl flex flex-col justify-between">
-      {isLoading ? (
+      {isLoading || isError ? (
         <ExpenseSummarySkeleton/>
       ) : (
         <>

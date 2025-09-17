@@ -15,7 +15,7 @@ const DashboardLayout = ({ children }: { children: ReactNode }) => {
   }, [isDarkMode]);
 
   return (
-    <div className="flex w-full min-h-screen bg-background text-text transition-colors duration-300">
+    <div className="flex w-full min-h-screen bg-background text-text transition-colors duration-300 pe-5">
       <Sidebar />
       <main className={`flex flex-col w-full h-full py-9 ${isSidebarCollapsed ? "md:pl-24" : "md:pl-72"}`}>
         <Navbar />

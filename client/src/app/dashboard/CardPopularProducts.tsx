@@ -5,11 +5,12 @@ import { useGetDashboardMetricsQuery } from "../state/api";
 import PopularProductsSkeleton from "./../(components)/Loaders/PopularProductsSkeleton "
 
 const CardPopularProducts = () => {
-  const { data: dashboardMetrics, isLoading } = useGetDashboardMetricsQuery();
-
+  const { data: dashboardMetrics, isLoading ,isError,error} = useGetDashboardMetricsQuery();
+  
+  
   return (
     <div className="row-span-3 xl:row-span-6 bg-white shadow-md rounded-2xl pb-16">
-      {isLoading ? (
+      {isLoading || isError ? (
         <PopularProductsSkeleton/>
       ) : (
         <>

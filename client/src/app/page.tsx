@@ -3,7 +3,9 @@ import Dashboard from './dashboard/page'
 
 const page = () => {
   return (
-    <Dashboard/>
+    <div className='p-5'>
+      <Dashboard/>
+    </div>
     
   )
 }
