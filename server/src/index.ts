@@ -6,6 +6,8 @@ import helmet from "helmet"
 import morgan from "morgan"
 import dashboardRoute from "./routes/dashboardRoute"
 import productRoute from "./routes/productRoute"
+import userRoute from "./routes/userRoute" 
+import expenseRoute from "./routes/expensebycategoryRoute" 
 
 dotenv.config()
 const app=exprees()
@@ -23,7 +25,8 @@ const port =process.env.PORT || 3001
 
 app.use("/dashboard",dashboardRoute)
 app.use("/products",productRoute)
-
+app.use("/users",userRoute)
+app.use("/expenses",expenseRoute)
 
 app.listen(port,()=>{
     console.log(`server is running at port ${port}`)

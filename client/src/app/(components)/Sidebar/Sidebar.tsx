@@ -91,7 +91,7 @@ const Sidebar = () => {
             isSidebarCollapsed ? "hidden" : "block"
           } font-extrabold text-2xl`}
         >
-          EDSTOCK
+          STOCK
         </h1>
 
         {/* Mobile toggle button */}
