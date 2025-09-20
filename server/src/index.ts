@@ -21,13 +21,13 @@ app.use(cors())
 
 
 
-const port =process.env.PORT || 3001
+const port =Number(process.env.PORT) || 3001
 
 app.use("/dashboard",dashboardRoute)
 app.use("/products",productRoute)
 app.use("/users",userRoute)
 app.use("/expenses",expenseRoute)
 
-app.listen(port,()=>{
+app.listen(port,"0.0.0.0",()=>{
     console.log(`server is running at port ${port}`)
 })

@@ -20,3 +20,13 @@ pnpm-debug.log*
 
 # Misc
 .DS_Store
+
+client/node_modules
+server/node_modules
+client/dist
+server/dist
+
+client/.env
+server/.env
+
+client/.next/
