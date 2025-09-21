@@ -10,6 +10,7 @@ import {
   ResponsiveContainer,
   Tooltip,
 } from "recharts";
+import ExpensesLoader from '../(components)/Loaders/ExpensesLoader';
 
 
 type AggregatedDataItem={
@@ -62,7 +63,7 @@ const Expenses = () => {
   };
 
     if(isLoading){
-        return <div className='py-4'>Loading...</div>
+        return <ExpensesLoader/>
     }
     if(isError || !expenseData){
         return <div className='text-center text-red-500 py-4 '> Failed to fetch Expenses</div>
@@ -143,7 +144,7 @@ const Expenses = () => {
                 outerRadius={150}
                 fill="#8884d8"
                 dataKey="amount"
-                onMouseEnter={(_, index) => setactiveIndex(index)}
+                onMouseEnter={(_:null, index:number) => setactiveIndex(index)}
               >
                 {aggregatedData.map(
                   (entry: AggregatedDataItem, index: number) => (
