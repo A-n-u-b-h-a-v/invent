@@ -5,7 +5,7 @@ import { useGetDashboardMetricsQuery } from "../state/api";
 import PopularProductsSkeleton from "./../(components)/Loaders/PopularProductsSkeleton "
 
 const CardPopularProducts = () => {
-  const { data: dashboardMetrics, isLoading ,isError,error} = useGetDashboardMetricsQuery();
+  const { data: dashboardMetrics, isLoading ,isError} = useGetDashboardMetricsQuery();
   
   
   return (
