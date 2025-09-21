@@ -5,6 +5,8 @@ import { PlusCircleIcon, SearchIcon } from 'lucide-react';
 import Header from '../(components)/Header';
 import Rating from '../(components)/Rating';
 import CreateProductModal from './CreateProductModal';
+import Image from 'next/image';
+import ProductLoader from '../(components)/Loaders/ProductLoader';
 
 type ProductFormData = {
     name: string;
@@ -25,7 +27,7 @@ const Products = () => {
     }
 
     if (isLoading) {
-        return <div className='py-4'>Loading...</div>
+        return <ProductLoader/>
     }
     if (isError || !products) {
         return <div className='text-center text-red-500' >Failed to fetch products</div>
@@ -52,10 +54,10 @@ const Products = () => {
       </div>
             <div className='grid grid-col-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 justify-between'>
                 {
-                    isLoading ? (<div> Loading....</div>) : (products.map((product) => (
+                    isLoading ? (<ProductLoader/>) : (products.map((product) => (
                         <div key={product.productId} className='border shadow rounded-md p-4 max-w-full w-full mx-auto'>
                             <div className='flex flex-col items-center'>
-                                img
+                                <Image src={`s3-invent.s3.ap-south-1.amazonaws.com/product${Math.floor(Math.random()*3)+1}.png`} alt={product.name} width={150} height={150} className="mb-3 rounded-2xl w-36 h-36"/>
                                 <h3 className="text-lg text-gray-900 font-semibold">
                                     {product.name}
                                 </h3>

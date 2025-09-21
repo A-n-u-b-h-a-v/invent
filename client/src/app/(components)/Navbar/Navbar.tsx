@@ -1,10 +1,11 @@
 "use client";
 
-import { Bell, Menu, Moon, Settings, Sun } from "lucide-react";
+import { Bell, Menu, Settings } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import {  setIsSidebarCollapsed } from "../../state";
 import { useAppDispatch, useAppSelector } from "../../redux";
+import Image from "next/image"
 
 const Navbar = () => {
   const dispatch = useAppDispatch();
@@ -53,8 +54,9 @@ const Navbar = () => {
             </span>
           </div>
           <hr className="w-0 h-7 border border-solid border-l border-gray-300 mx-3" />
-          <div className="flex items-center gap-3 cursor-pointer">
-            
+          <div className="flex items-center gap-3 cursor-pointer">  
+
+            <Image src="https://s3-invent.s3.ap-south-1.amazonaws.com/profile.png" alt="profile" width={50} height={50} className="rounded-full h-full object-cover"/>
             <span className="font-semibold">Anubhav</span>
           </div>
         </div>
