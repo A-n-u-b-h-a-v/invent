@@ -26,7 +26,7 @@ const Dashboard = () => {
         dateRange="22 - 29 October 2023"
         details={[
           {
-            title: `Customer ${<br/>} Growth`,
+            title: `Customer Growth`,
             amount: "175.00",
             changePercentage: 131,
             IconComponent: TrendingUp,
